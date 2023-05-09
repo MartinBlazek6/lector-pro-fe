@@ -6,10 +6,6 @@
     let studentIdVar;
     let lectionIdVar;
 
-    let title = '';
-    let level = '';
-    let date = '';
-
     let firstName = '';
     let lastName = '';
     let email = '';
