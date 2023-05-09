@@ -5,8 +5,16 @@
     let errorMessage = '';
     let studentIdVar;
     let lectionIdVar;
-    // let server = 'http://localhost:8080';
-    let server = 'https://lector-tool.up.railway.app';
+
+    let title = '';
+    let level = '';
+    let date = '';
+
+    let firstName = '';
+    let lastName = '';
+    let email = '';
+    let server = 'http://localhost:8080';
+    // let server = 'https://lector-tool.up.railway.app';
 
     const fetchLections = async () => {
         try {
@@ -22,10 +30,6 @@
     };
 
     onMount(fetchLections);
-
-    let firstName = '';
-    let lastName = '';
-    let email = '';
 
     const addStudent = async () => {
         try {
@@ -67,6 +71,7 @@
             errorMessage = 'An error occurred while adding student to lection.';
         }
     };
+
 </script>
 
 
@@ -178,5 +183,10 @@
 
     <button type="submit">Add Student</button>
 </form>
+
+
+
+
+
 
 
