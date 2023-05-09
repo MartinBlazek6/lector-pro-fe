@@ -13,8 +13,8 @@
     let firstName = '';
     let lastName = '';
     let email = '';
-    let server = 'http://localhost:8080';
-    // let server = 'https://lector-tool.up.railway.app';
+    // let server = 'http://localhost:8080';
+    let server = 'https://lector-tool.up.railway.app';
 
     const fetchLections = async () => {
         try {

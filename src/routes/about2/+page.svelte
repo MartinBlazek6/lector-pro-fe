@@ -1,11 +1,16 @@
+
+<svelte:head>
+	<title>Admin</title>
+	<meta name="description" content="About this app" />
+</svelte:head>
 <script>
 
 	let errorMessage = '';
 	let title = '';
 	let level = '';
 	let date = '';
-	let server = 'http://localhost:8080';
-	// let server = 'https://lector-tool.up.railway.app';
+	// let server = 'http://localhost:8080';
+	let server = 'https://lector-tool.up.railway.app';
 
 	const createLection = async () => {
 		try {
