@@ -5,10 +5,12 @@
     let errorMessage = '';
     let studentIdVar;
     let lectionIdVar;
+    // let server = 'http://localhost:8080';
+    let server = 'https://lector-tool.up.railway.app';
 
     const fetchLections = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/v1/lections');
+            const response = await fetch(server+'/api/v1/lections');
             if (response.ok) {
                 lections = await response.json();
             } else {
@@ -27,7 +29,7 @@
 
     const addStudent = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/v1/addStudent', {
+            const response = await fetch(server+'/api/v1/addStudent', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -52,7 +54,7 @@
 
     const addStudentToLection = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/api/v1/addStudentToLection?lectionId=${lectionIdVar}&studentId=${studentIdVar}`, {
+            const response = await fetch(server+`/api/v1/addStudentToLection?lectionId=${lectionIdVar}&studentId=${studentIdVar}`, {
                 method: 'POST'
             });
             if (response.ok) {
