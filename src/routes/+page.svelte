@@ -73,9 +73,63 @@
 <h2>All Lections:</h2>
 
 <style>
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
+    li {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        border: 2px solid #ccc;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    button[type="submit"] {
+        background-color: #007bff;
+        border: none;
+        border-radius: 0.5rem;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0062cc;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
 </style>
+
 
 {#if errorMessage}
     <p>{errorMessage}</p>
