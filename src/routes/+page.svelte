@@ -1,8 +1,10 @@
 <script>
-    import { onMount } from 'svelte';
+    import {onMount} from 'svelte';
 
     let lections = [];
     let errorMessage = '';
+    let studentIdVar;
+    let lectionIdVar;
 
     const fetchLections = async () => {
         try {
@@ -48,9 +50,9 @@
         }
     };
 
-    const addStudentToLection = async (lectionId, studentId) => {
+    const addStudentToLection = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/api/v1/addStudentToLection?lectionId=${lectionId}&studentId=${studentId}`, {
+            const response = await fetch(`http://localhost:8080/api/v1/addStudentToLection?lectionId=${lectionIdVar}&studentId=${studentIdVar}`, {
                 method: 'POST'
             });
             if (response.ok) {
@@ -66,7 +68,6 @@
 </script>
 
 
-
 <h2>All Lections:</h2>
 
 <style>
@@ -79,7 +80,7 @@
 {:else if lections.length > 0}
     <ul>
         {#each lections as lection}
-            <li>{lection.title} - {lection.level} - {new Date(lection.date).toLocaleDateString()}</li>
+            <li>lectionId: {lection.lectionId} -  {lection.title} - {lection.level} - {new Date(lection.date).toLocaleDateString()}</li>
         {/each}
     </ul>
 {:else}
@@ -91,18 +92,33 @@
 <form on:submit|preventDefault={addStudent}>
     <div>
         <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" bind:value={firstName} />
+        <input type="text" id="firstName" bind:value={firstName}/>
     </div>
 
     <div>
         <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" bind:value={lastName} />
+        <input type="text" id="lastName" bind:value={lastName}/>
     </div>
 
     <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" bind:value={email} />
+        <input type="email" id="email" bind:value={email}/>
     </div>
+
+    <button type="submit">Add Student</button>
+</form>
+
+<form on:submit|preventDefault={addStudentToLection}>
+    <div>
+        <label for="firstName">StudentId:</label>
+        <input type="text" id="studentId" bind:value={studentIdVar}/>
+    </div>
+
+    <div>
+        <label for="lastName">LectionId:</label>
+        <input type="text" id="lectionId" bind:value={lectionIdVar}/>
+    </div>
+
 
     <button type="submit">Add Student</button>
 </form>
