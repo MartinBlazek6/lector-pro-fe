@@ -1,27 +1,27 @@
 <svelte:head>
 	<title>Table</title>
 	<meta name="description" content="About this app"/>
-	<style>
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
+<!--	<style>-->
+<!--		table {-->
+<!--			border-collapse: collapse;-->
+<!--			width: 100%;-->
+<!--		}-->
 
-		th, td {
-			padding: 8px;
-			text-align: left;
-			border-bottom: 1px solid #ddd;
-		}
+<!--		th, td {-->
+<!--			padding: 8px;-->
+<!--			text-align: left;-->
+<!--			border-bottom: 1px solid #ddd;-->
+<!--		}-->
 
-		th {
-			background-color: #f2f2f2;
-			font-weight: bold;
-		}
+<!--		th {-->
+<!--			background-color: #f2f2f2;-->
+<!--			font-weight: bold;-->
+<!--		}-->
 
-		tr:hover {
-			background-color: #f5f5f5;
-		}
-	</style>
+<!--		tr:hover {-->
+<!--			background-color: #f5f5f5;-->
+<!--		}-->
+<!--	</style>-->
 </svelte:head>
 
 <script>
