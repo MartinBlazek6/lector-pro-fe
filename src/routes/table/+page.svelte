@@ -1,6 +1,7 @@
 <svelte:head>
 	<title>Table</title>
 	<meta name="description" content="About this app"/>
+	<link rel="prefetch" href="path/to/2.896a1ef5.css" as="style">
 	<style>
 		table {
 			border-collapse: collapse;
@@ -49,7 +50,7 @@
 	onMount(fetchLections);
 </script>
 
-<div class="text-column">
+<div className="text-column">
 	<h1>List of Lections</h1>
 
 	{#if errorMessage}
@@ -100,5 +101,4 @@
 	{:else}
 		<p>Loading lections...</p>
 	{/if}
-
 </div>
