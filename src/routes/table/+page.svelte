@@ -1,29 +1,28 @@
-<svelte:head>
-	<title>Table</title>
-	<meta name="description" content="About this app"/>
-	<style>
-		table {
-			border-collapse: collapse;
-			width: 100%;
-		}
+<!--<svelte:head>-->
+<!--	<title>Table</title>-->
+<!--	<meta name="description" content="About this app"/>-->
+<!--</svelte:head>-->
+<style>
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
 
-		th, td {
-			padding: 8px;
-			text-align: left;
-			border-bottom: 1px solid #ddd;
-		}
+	th, td {
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid #ddd;
+	}
 
-		th {
-			background-color: #f2f2f2;
-			font-weight: bold;
-		}
+	th {
+		background-color: #f2f2f2;
+		font-weight: bold;
+	}
 
-		tr:hover {
-			background-color: #f5f5f5;
-		}
-	</style>
-</svelte:head>
-
+	tr:hover {
+		background-color: #f5f5f5;
+	}
+</style>
 <script>
 	import {onMount} from "svelte";
 
@@ -49,7 +48,7 @@
 	onMount(fetchLections);
 </script>
 
-<div className="text-column">
+<div class="text-column">
 	<h1>List of Lections</h1>
 
 	{#if errorMessage}
