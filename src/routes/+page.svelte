@@ -6,10 +6,6 @@
     let studentIdVar;
     let lectionIdVar;
 
-    let title = '';
-    let level = '';
-    let date = '';
-
     let firstName = '';
     let lastName = '';
     let email = '';
@@ -169,20 +165,7 @@
     <button type="submit">Add Student</button>
 </form>
 
-<form on:submit|preventDefault={addStudentToLection}>
-    <div>
-        <label for="firstName">StudentId:</label>
-        <input type="text" id="studentId" bind:value={studentIdVar}/>
-    </div>
 
-    <div>
-        <label for="lastName">LectionId:</label>
-        <input type="text" id="lectionId" bind:value={lectionIdVar}/>
-    </div>
-
-
-    <button type="submit">Add Student</button>
-</form>
 
 
 
