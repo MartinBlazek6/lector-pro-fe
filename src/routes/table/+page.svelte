@@ -1,7 +1,6 @@
 <svelte:head>
 	<title>Table</title>
 	<meta name="description" content="About this app"/>
-	<link rel="prefetch" href="path/to/2.896a1ef5.css" as="style">
 	<style>
 		table {
 			border-collapse: collapse;
@@ -56,28 +55,6 @@
 	{#if errorMessage}
 		<p>{errorMessage}</p>
 	{:else if lections.length > 0}
-		<style>
-			table {
-				border-collapse: collapse;
-				width: 100%;
-			}
-
-			th, td {
-				padding: 8px;
-				text-align: left;
-				border-bottom: 1px solid #ddd;
-			}
-
-			th {
-				background-color: #f2f2f2;
-				font-weight: bold;
-			}
-
-			tr:hover {
-				background-color: #f5f5f5;
-			}
-		</style>
-
 		<table>
 			<thead>
 			<tr>
@@ -101,4 +78,5 @@
 	{:else}
 		<p>Loading lections...</p>
 	{/if}
+
 </div>
