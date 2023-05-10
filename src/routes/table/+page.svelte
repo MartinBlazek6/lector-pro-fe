@@ -1,7 +1,7 @@
-<!--<svelte:head>-->
-<!--	<title>Table</title>-->
-<!--	<meta name="description" content="About this app"/>-->
-<!--</svelte:head>-->
+<svelte:head>
+	<title>Table</title>
+	<meta name="description" content="About this app"/>
+</svelte:head>
 <style>
 	table {
 		border-collapse: collapse;
