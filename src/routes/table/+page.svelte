@@ -1,27 +1,27 @@
 <svelte:head>
 	<title>Table</title>
 	<meta name="description" content="About this app"/>
-<!--	<style>-->
-<!--		table {-->
-<!--			border-collapse: collapse;-->
-<!--			width: 100%;-->
-<!--		}-->
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
 
-<!--		th, td {-->
-<!--			padding: 8px;-->
-<!--			text-align: left;-->
-<!--			border-bottom: 1px solid #ddd;-->
-<!--		}-->
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
 
-<!--		th {-->
-<!--			background-color: #f2f2f2;-->
-<!--			font-weight: bold;-->
-<!--		}-->
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
 
-<!--		tr:hover {-->
-<!--			background-color: #f5f5f5;-->
-<!--		}-->
-<!--	</style>-->
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+	</style>
 </svelte:head>
 
 <script>
@@ -44,38 +44,50 @@
 			errorMessage = 'An error occurred while fetching lections.';
 		}
 	};
+	
 
 	onMount(fetchLections);
 </script>
 
-<div className="text-column">
-	<h1>List of Lections</h1>
+<!--<div className="text-column">-->
+<!--	<h1>List of Lections</h1>-->
 
-	{#if errorMessage}
-		<p>{errorMessage}</p>
-	{:else if lections.length > 0}
-		<table>
-			<thead>
-			<tr>
-				<th>ID</th>
-				<th>Title</th>
-				<th>Level</th>
-				<th>Date</th>
-			</tr>
-			</thead>
-			<tbody>
-			{#each lections as lection}
-				<tr>
-					<td>{lection.lectionId}</td>
-					<td>{lection.title}</td>
-					<td>{lection.level}</td>
-					<td>{new Date(lection.date).toLocaleDateString()}</td>
-				</tr>
-			{/each}
-			</tbody>
-		</table>
-	{:else}
-		<p>Loading lections...</p>
-	{/if}
+<!--	{#if errorMessage}-->
+<!--		<p>{errorMessage}</p>-->
+<!--	{:else if lections.length > 0}-->
+<!--		<table>-->
+<!--			<thead>-->
+<!--			<tr>-->
+<!--				<th>ID</th>-->
+<!--				<th>Title</th>-->
+<!--				<th>Level</th>-->
+<!--				<th>Date</th>-->
+<!--			</tr>-->
+<!--			</thead>-->
+<!--			<tbody>-->
+<!--			{#each lections as lection}-->
+<!--				<tr>-->
+<!--					<td>{lection.lectionId}</td>-->
+<!--					<td>{lection.title}</td>-->
+<!--					<td>{lection.level}</td>-->
+<!--					<td>{new Date(lection.date).toLocaleDateString()}</td>-->
+<!--				</tr>-->
+<!--			{/each}-->
+<!--			</tbody>-->
+<!--		</table>-->
+<!--	{:else}-->
+<!--		<p>Loading lections...</p>-->
+<!--	{/if}-->
 
-</div>
+<!--</div>-->
+{#if errorMessage}
+	<p>{errorMessage}</p>
+{:else if lections.length > 0}
+	<ul>
+		{#each lections as lection}
+			<li>lectionId: {lection.lectionId} -  {lection.title} - {lection.level} - {new Date(lection.date).toLocaleDateString()}</li>
+		{/each}
+	</ul>
+{:else}
+	<p>Loading lections...</p>
+{/if}
