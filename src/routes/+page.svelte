@@ -9,6 +9,9 @@
     let firstName = '';
     let lastName = '';
     let email = '';
+    let title = '';
+    let level = '';
+    let date = '';
     // let server = 'http://localhost:8080';
     let server = 'https://lector-tool.up.railway.app';
 
@@ -65,6 +68,28 @@
             }
         } catch (error) {
             errorMessage = 'An error occurred while adding student to lection.';
+        }
+    };
+
+
+    const createLection = async () => {
+        try {
+            const response = await fetch(server+`/api/v1/createLection?title=${title}&level=${level}&date=${date}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                const newLection = await response.json();
+                // Do something with the new lection, such as add it to the list of lections
+                console.info('ok')
+            } else {
+                errorMessage = 'Failed to create lection.';
+            }
+        } catch (error) {
+            errorMessage = 'An error occurred while creating the lection.';
         }
     };
 
@@ -165,20 +190,23 @@
     <button type="submit">Add Student</button>
 </form>
 
-<form on:submit|preventDefault={addStudentToLection}>
-    <div>
-        <label for="firstName">StudentId:</label>
-        <input type="text" id="studentId" bind:value={studentIdVar}/>
-    </div>
-
-    <div>
-        <label for="lastName">LectionId:</label>
-        <input type="text" id="lectionId" bind:value={lectionIdVar}/>
-    </div>
-
-
-    <button type="submit">Add Student</button>
+<form on:submit={createLection}>
+    <label>
+        Title:
+        <input type="text" bind:value={title}>
+    </label>
+    <label>
+        Level:
+        <input type="text" bind:value={level}>
+    </label>
+    <label>
+        Date:
+        <input type="date" bind:value={date}>
+    </label>
+    <button type="submit">Create Lection</button>
 </form>
+
+
 
 
 
