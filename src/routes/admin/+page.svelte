@@ -10,7 +10,7 @@
 	let level = '';
 	let date = '';
 	// let server = 'http://localhost:8080';
-	let server = 'https://lector-tool.up.railway.app';
+	let server = 'https://en-lection-organizer-pro-production.up.railway.app';
 
 	const createLection = async () => {
 		try {
